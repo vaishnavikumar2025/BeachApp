@@ -6,9 +6,9 @@ const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
 const BeachArtifactCard = ({ navigation }) => {
   const images = [
-    require('D:/Homepage/trial/trial/Client/assets/images/beach1.jpg'),
-    require('D:/Homepage/trial/trial/Client/assets/images/beach1.jpg'),
-    require('D:/Homepage/trial/trial/Client/assets/images/beach1.jpg'),
+    require('@/assets/images/beach1.jpg'),
+    require('@/assets/images/beach1.jpg'),
+    require('@/assets/images/beach1.jpg'),
     // Add more images as needed
   ];
 
@@ -16,7 +16,7 @@ const BeachArtifactCard = ({ navigation }) => {
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <Image source={require('D:/Homepage/trial/trial/Client/assets/images/logo.png')} style={styles.logo} />
+        <Image source={require('@/assets/images/logo.png')} style={styles.logo} />
         <View style={styles.locationContainer}>
           <Ionicons name="location-sharp" size={18} color="#FF4C4C" marginLeft={10} />
           <Text style={styles.locationText}>Malpe beach, Udupi, Karnataka</Text>

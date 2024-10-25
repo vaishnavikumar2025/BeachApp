@@ -5,35 +5,34 @@ import { Ionicons, FontAwesome } from '@expo/vector-icons';
 
 const { width: screenWidth } = Dimensions.get('window');
 
-const initialPosts = [
-  {
-    id: '1',
-    username: 'Vaishnavi Kumar',
-    time: '11 mins ago',
-    image: require('D:/Homepage/trial/trial/Client/assets/images/beach1.jpg'),
-    likes: '1.2k',
-    isLiked: false,
-  },
-  {
-    id: '2',
-    username: 'Ayesha Kousar',
-    time: '20 mins ago',
-    image: require('D:/Homepage/trial/trial/Client/assets/images/beach2.jpg'),
-    likes: '1.8k',
-    isLiked: false,
-  },
-  {
-    id: '3',
-    username: 'Bhavish Kunder',
-    time: '1 hour ago',
-    image: require('D:/Homepage/trial/trial/Client/assets/images/beach3.jpg'),
-    likes: '5k',
-    isLiked: false,
-  },
-  // Add more posts as needed
-];
+const BeachSnap = ({ navigation }) => {
+  const initialPosts = [
+    {
+      id: '1',
+      username: 'Vaishnavi Kumar',
+      time: '11 mins ago',
+      image: require('@/assets/images/beach1.jpg'),
+      likes: '1.2k',
+      isLiked: false,
+    },
+    {
+      id: '2',
+      username: 'Ayesha Kousar',
+      time: '20 mins ago',
+      image: require('@/assets/images/beach2.jpg'),
+      likes: '1.8k',
+      isLiked: false,
+    },
+    {
+      id: '3',
+      username: 'Bhavish Kunder',
+      time: '1 hour ago',
+      image: require('@/assets/images/beach3.jpg'),
+      likes: '5k',
+      isLiked: false,
+    },
+  ];
 
-export default function SnapOfTheWeek() {
   const [posts, setPosts] = useState(initialPosts);
 
   const toggleLike = (id) => {
@@ -44,10 +43,9 @@ export default function SnapOfTheWeek() {
 
   return (
     <View style={styles.container}>
-      
       {/* Header */}
       <View style={styles.header}>
-        <Image source={require('D:/Homepage/trial/trial/Client/assets/images/logo.png')} style={styles.logo} />
+        <Image source={require('@/assets/images/logo.png')} style={styles.logo} />
         <View style={styles.locationContainer}>
           <Ionicons name="location-sharp" size={18} color="#FF4C4C" />
           <Text style={styles.locationText}>Malpe beach, Udupi, Karnataka</Text>
@@ -56,11 +54,11 @@ export default function SnapOfTheWeek() {
       
       {/* Snap of the Week Button */}
       <View style={styles.snapButtonContainer}>
-        <TouchableOpacity style={styles.backButton}>
+        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color="#333" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonPrimary}>
-            <Text style={styles.buttonText}>Snap of the week</Text>
+          <Text style={styles.buttonText}>Snap of the week</Text>
         </TouchableOpacity>
       </View>
       
@@ -103,7 +101,9 @@ export default function SnapOfTheWeek() {
       </View>
     </View>
   );
-}
+};
+
+export default BeachSnap;  // Corrected this line
 
 const styles = StyleSheet.create({
   container: {

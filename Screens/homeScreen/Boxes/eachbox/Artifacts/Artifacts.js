@@ -5,28 +5,29 @@ import { Ionicons } from '@expo/vector-icons';
 
 const BeachArtifactsScreen = ({ navigation }) => { 
   const beachArtifacts = [
-    { id: '1', name: 'Conch', location: 'Pondicherry', image: require('D:/Homepage/trial/trial/Client/assets/images/beach1.jpg') },
-    { id: '2', name: 'Shell Mirrors', location: 'Udupi', image: require('D:/Homepage/trial/trial/Client/assets/images/beach1.jpg') },
-    { id: '3', name: 'Shell Necklace', location: 'Mumbai', image: require('D:/Homepage/trial/trial/Client/assets/images/beach2.jpg') },
-    { id: '4', name: 'Pearl Necklace', location: 'Kanyakumari', image: require('D:/Homepage/trial/trial/Client/assets/images/beach3.jpg') },
-    { id: '5', name: 'Loose Shells', location: 'Malpe beach', image: require('D:/Homepage/trial/trial/Client/assets/images/beach1.jpg') },
-    { id: '6', name: 'Rudraksha', location: 'Rameswaram', image: require('D:/Homepage/trial/trial/Client/assets/images/beach2.jpg') },
+    { id: '1', name: 'Conch', location: 'Pondicherry', image: require('@/assets/images/beach1.jpg') },
+    { id: '2', name: 'Shell Mirrors', location: 'Udupi', image: require('@/assets/images/beach1.jpg') },
+    { id: '3', name: 'Shell Necklace', location: 'Mumbai', image: require('@/assets/images/beach2.jpg') },
+    { id: '4', name: 'Pearl Necklace', location: 'Kanyakumari', image: require('@/assets/images/beach3.jpg') },
+    { id: '5', name: 'Loose Shells', location: 'Malpe beach', image: require('@/assets/images/beach1.jpg') },
+    { id: '6', name: 'Rudraksha', location: 'Rameswaram', image: require('@/assets/images/beach2.jpg') },
     // Add more items as needed
   ];
   
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require('D:/Homepage/trial/trial/Client/assets/images/logo.png')} style={styles.logo} />
+        <Image source={require('@/assets/images/logo.png')} style={styles.logo} />
         <View style={styles.locationContainer}>
           <Ionicons name="location-sharp" size={18} color="#FF4C4C" />
           <Text style={styles.locationText}>Malpe beach, Udupi, Karnataka</Text>
         </View>
       </View>
       <View style={styles.snapButtonContainer}>
-        <TouchableOpacity style={styles.backButton}>
-          <Ionicons name="arrow-back" size={24} color="#333" />
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+        <Ionicons name="arrow-back" size={24} color="#333" />
+      </TouchableOpacity>
+
         <TouchableOpacity style={styles.buttonPrimary}>
             <Text style={styles.buttonText}>Artifacts</Text>
         </TouchableOpacity>
